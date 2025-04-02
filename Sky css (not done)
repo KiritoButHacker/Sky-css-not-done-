@@ -48,3 +48,89 @@ body{
 .slider_slide img {
     width: 200%;
 }
+
+.slider_nav-button {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: moccasin;
+    opacity: 8s;
+    cursor: pointer;
+}
+
+#nav-button--prev {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#nav-button--prev {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#nav-button--prev::after,
+#nav-button--next::after{
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 40%;
+    height: 40%;
+}
+
+#nav-button--next {
+    top: 50%;
+    right: 0; 
+    transform: translateY(-50%);
+}
+
+#nav-button--prev::after {
+    transform: rotate(135deg); 
+    left: 15px; /
+}
+
+#nav-button--next::after {
+    transform: rotate(-45deg); 
+    right: 15px; 
+}
+
+.slider_nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 10px 0; 
+}
+
+.slider_navlink {
+    text-decoration: none;
+    color: black; 
+    font-size: 18px; 
+    padding: 10px 15px; 
+    transition: color 0.3s; 
+}
+
+.navlink.active {
+    color: #f9839b; 
+    font-weight: bold; 
+}
+
+
+@media screen and (max-width: 768px) {
+    .slider_slide {
+        font-size: 30px; 
+    }
+
+    .slider_nav-button {
+        height: 50px; 
+        width: 50px; 
+    }
+
+    .slider_navlink {
+        font-size: 16px; 
+    }
+}
