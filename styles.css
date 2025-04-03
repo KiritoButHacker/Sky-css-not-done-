@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .slideshow-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #16213e;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .slider {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .slider_slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slider_slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider_slide.active {
+    opacity: 1;
+  }
+  
+  .slider_slide img {
+    height: 550px;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .slider_nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider_nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slider_nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+  }
+  
+  #nav-button--prev {
+    left: 20px;
+  }
+  
+  #nav-button--prev::before {
+    transform: translate(-35%, -50%) rotate(-135deg);
+  }
+  
+  #nav-button--next {
+    right: 20px;
+  }
+  
+  #nav-button--next::before {
+    transform: translate(-65%, -50%) rotate(45deg);
+  }
+  
+  .slider_play-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider_play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slider_play-button::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid white;
+    margin-left: 3px;
+  }
+  
+  .slider_play-button.paused::before {
+    border: none;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    margin-left: 0;
+  }
+  
+  .slider_nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+  
+  .slider_navlink {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.8s ease;
+  }
+  
+  .slider_navlink:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+  }
+  
+  .slider_navlink.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+  
+  @keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+  }
+  
+  .card-display {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e94560;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* For visual representation */
+  .card-placeholder {
+    width: 350px;
+    height: 550px;
+    background: linear-gradient(45deg, #e94560, #0f3460);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border: 5px solid #0f3460;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
